@@ -25,11 +25,6 @@ entities:
     - type: Transform
       pos: -0.53125,-0.5
       parent: invalid
-    - type: AutoDelete
-      distanceToCheck: 40
-      delayToDelete: 2400
-      delayToCheck: 60
-      isHumanoidNear: True
     - type: MapGrid
       chunks:
         0,0:

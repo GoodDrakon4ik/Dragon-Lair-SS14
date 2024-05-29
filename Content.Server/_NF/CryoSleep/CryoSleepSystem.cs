@@ -63,7 +63,7 @@ public sealed partial class CryoSleepSystem : SharedCryoSleepSystem
         SubscribeLocalEvent<CryoSleepComponent, GetVerbsEvent<AlternativeVerb>>(AddAlternativeVerbs);
         SubscribeLocalEvent<CryoSleepComponent, SuicideEvent>(OnSuicide);
         SubscribeLocalEvent<CryoSleepComponent, ExaminedEvent>(OnExamine);
-        SubscribeLocalEvent<CryoSleepComponent, DestructionEventArgs>((e,c,_) => EjectBody(e, c));
+        SubscribeLocalEvent<CryoSleepComponent, DestructionEventArgs>((e, c, _) => EjectBody(e, c));
         SubscribeLocalEvent<CryoSleepComponent, CryoStoreDoAfterEvent>(OnAutoCryoSleep);
         SubscribeLocalEvent<CryoSleepComponent, DragDropTargetEvent>(OnEntityDragDropped);
         SubscribeLocalEvent<RoundEndedEvent>(OnRoundEnded);
@@ -228,7 +228,7 @@ public sealed partial class CryoSleepSystem : SharedCryoSleepSystem
 
         if (success && mindComp?.Session != null)
         {
-            _euiManager.OpenEui(new CryoSleepEui(toInsert.Value,  cryopod, this), mindComp.Session);
+            _euiManager.OpenEui(new CryoSleepEui(toInsert.Value, cryopod, this), mindComp.Session);
         }
 
         if (success)
@@ -263,7 +263,7 @@ public sealed partial class CryoSleepSystem : SharedCryoSleepSystem
             return;
 
         NetUserId? id = null;
-        if (_mind.TryGetMind(bodyId, out var mindEntity, out var mind) && mind.CurrentEntity is { Valid : true } body)
+        if (_mind.TryGetMind(bodyId, out var mindEntity, out var mind) && mind.CurrentEntity is { Valid: true } body)
         {
             _gameTicker.OnGhostAttempt(mindEntity, false, true, mind: mind);
 
@@ -283,14 +283,14 @@ public sealed partial class CryoSleepSystem : SharedCryoSleepSystem
             _doAfter.Cancel(cryo.CryosleepDoAfter);
 
         // Start a timer. When it ends, the body needs to be deleted.
-        Timer.Spawn(TimeSpan.FromSeconds(_configurationManager.GetCVar(NF14CVars.CryoExpirationTime)), () =>
-        {
-            if (id != null)
-                ResetCryosleepState(id.Value);
+        // Timer.Spawn(TimeSpan.FromSeconds(_configurationManager.GetCVar(NF14CVars.CryoExpirationTime)), () =>
+        // {
+        //     if (id != null)
+        //         ResetCryosleepState(id.Value);
 
-            if (!Deleted(bodyId) && Transform(bodyId).ParentUid == _storageMap)
-                QueueDel(bodyId);
-        });
+        //     if (!Deleted(bodyId) && Transform(bodyId).ParentUid == _storageMap)
+        //         QueueDel(bodyId);
+        // });
     }
 
     /// <param name="body">If not null, will not eject if the stored body is different from that parameter.</param>
