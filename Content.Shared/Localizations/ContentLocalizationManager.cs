@@ -1,6 +1,7 @@
 ﻿using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Transactions;
 using Robust.Shared.Utility;
 
 namespace Content.Shared.Localizations
@@ -9,9 +10,14 @@ namespace Content.Shared.Localizations
     {
         [Dependency] private readonly ILocalizationManager _loc = default!;
 
+        // public event Action? LanguageSwitched;
+
         // If you want to change your codebase's language, do it here.
-        private const string Culture = "ru-RU"; // Corvax-Localization
-        private const string FallbackCulture = "en-US"; // Corvax-Localization
+        // thread.CurrentCulture.TwoLetterISOLanguageName == language
+
+        private const string CultureUA = "uk-UA"; // TODO: UA-Localization
+        private const string Culture = "ru-RU";
+        private const string FallbackCulture = "en-US";
 
         /// <summary>
         /// Custom format strings used for parsing and displaying minutes:seconds timespans.
@@ -28,19 +34,37 @@ namespace Content.Shared.Localizations
         {
             var culture = new CultureInfo(Culture);
             var fallbackCulture = new CultureInfo(FallbackCulture); // Corvax-Localization
+            var cultrueUA = new CultureInfo(CultureUA);
+            string currentCulture = CultureInfo.InstalledUICulture.Name;
+            if (currentCulture == "uk-UA")
+            {
+                _loc.LoadCulture(cultrueUA);
+                _loc.AddFunction(cultrueUA, "PRESSURE", FormatPressure);
+                _loc.AddFunction(cultrueUA, "POWERWATTS", FormatPowerWatts);
+                _loc.AddFunction(cultrueUA, "POWERJOULES", FormatPowerJoules);
+                _loc.AddFunction(cultrueUA, "UNITS", FormatUnits);
+                _loc.AddFunction(cultrueUA, "TOSTRING", args => FormatToString(cultrueUA, args));
+                _loc.AddFunction(cultrueUA, "LOC", FormatLoc);
+                _loc.AddFunction(cultrueUA, "NATURALFIXED", FormatNaturalFixed);
+                _loc.AddFunction(cultrueUA, "NATURALPERCENT", FormatNaturalPercent);
+                _loc.AddFunction(cultrueUA, "MANY", FormatMany); // TODO: Temporary fix for MANY() fluent errors. Remove after resolve errors.
+            }
+            else
+            {
+                _loc.LoadCulture(culture);
+                _loc.AddFunction(culture, "PRESSURE", FormatPressure);
+                _loc.AddFunction(culture, "POWERWATTS", FormatPowerWatts);
+                _loc.AddFunction(culture, "POWERJOULES", FormatPowerJoules);
+                _loc.AddFunction(culture, "UNITS", FormatUnits);
+                _loc.AddFunction(culture, "TOSTRING", args => FormatToString(culture, args));
+                _loc.AddFunction(culture, "LOC", FormatLoc);
+                _loc.AddFunction(culture, "NATURALFIXED", FormatNaturalFixed);
+                _loc.AddFunction(culture, "NATURALPERCENT", FormatNaturalPercent);
+                _loc.AddFunction(culture, "MANY", FormatMany); // TODO: Temporary fix for MANY() fluent errors. Remove after resolve errors.
+            }
 
-            _loc.LoadCulture(culture);
-            _loc.LoadCulture(fallbackCulture); // Corvax-Localization
-            _loc.SetFallbackCluture(fallbackCulture); // Corvax-Localization
-            _loc.AddFunction(culture, "PRESSURE", FormatPressure);
-            _loc.AddFunction(culture, "POWERWATTS", FormatPowerWatts);
-            _loc.AddFunction(culture, "POWERJOULES", FormatPowerJoules);
-            _loc.AddFunction(culture, "UNITS", FormatUnits);
-            _loc.AddFunction(culture, "TOSTRING", args => FormatToString(culture, args));
-            _loc.AddFunction(culture, "LOC", FormatLoc);
-            _loc.AddFunction(culture, "NATURALFIXED", FormatNaturalFixed);
-            _loc.AddFunction(culture, "NATURALPERCENT", FormatNaturalPercent);
-            _loc.AddFunction(culture, "MANY", FormatMany); // TODO: Temporary fix for MANY() fluent errors. Remove after resolve errors.
+            _loc.LoadCulture(fallbackCulture);
+            _loc.SetFallbackCluture(fallbackCulture);
 
 
             /*
@@ -71,8 +95,8 @@ namespace Content.Shared.Localizations
         private ILocValue FormatNaturalPercent(LocArgs args)
         {
             var number = ((LocValueNumber) args.Args[0]).Value * 100;
-            var maxDecimals = (int)Math.Floor(((LocValueNumber) args.Args[1]).Value);
-            var formatter = (NumberFormatInfo)NumberFormatInfo.GetInstance(CultureInfo.GetCultureInfo(Culture)).Clone();
+            var maxDecimals = (int) Math.Floor(((LocValueNumber) args.Args[1]).Value);
+            var formatter = (NumberFormatInfo) NumberFormatInfo.GetInstance(CultureInfo.GetCultureInfo(Culture)).Clone();
             formatter.NumberDecimalDigits = maxDecimals;
             return new LocValueString(string.Format(formatter, "{0:N}", number).TrimEnd('0').TrimEnd(char.Parse(formatter.NumberDecimalSeparator)) + "%");
         }
@@ -80,8 +104,8 @@ namespace Content.Shared.Localizations
         private ILocValue FormatNaturalFixed(LocArgs args)
         {
             var number = ((LocValueNumber) args.Args[0]).Value;
-            var maxDecimals = (int)Math.Floor(((LocValueNumber) args.Args[1]).Value);
-            var formatter = (NumberFormatInfo)NumberFormatInfo.GetInstance(CultureInfo.GetCultureInfo(Culture)).Clone();
+            var maxDecimals = (int) Math.Floor(((LocValueNumber) args.Args[1]).Value);
+            var formatter = (NumberFormatInfo) NumberFormatInfo.GetInstance(CultureInfo.GetCultureInfo(Culture)).Clone();
             formatter.NumberDecimalDigits = maxDecimals;
             return new LocValueString(string.Format(formatter, "{0:N}", number).TrimEnd('0').TrimEnd(char.Parse(formatter.NumberDecimalSeparator)));
         }
@@ -220,5 +244,10 @@ namespace Content.Shared.Localizations
 
             return new LocValueString(res);
         }
+
+        // public void SwitchToLanguage()
+        // {
+        //     LanguageSwitched?.Invoke();
+        // }
     }
 }
