@@ -1,0 +1,75 @@
+  id: PlushieS7-62
+  name: S7-62 Plushie
+  description: A cute robo-lizard plushie, It seems to glow with a slightly orange color.
+  id: PlushieHofi-Peak
+  name: Hofi-Peak plushie
+  description: He is laboratory employee number 08.
+  id: PlushieDirdomoy
+  name: Dirdomoy plushie
+  description: Winged synth.
+  id: PlushieON1X
+  name: ON1X plushie
+  description: its his gilded with real gold?!
+  id: PlushieSparc
+  name: Sparc plushie
+  description: cute synth.
+  id: PlushieKronas
+  name: Kronas plushie
+  description: The robotic synth.
+  id: PlushieDamon
+  name: Damon plushie
+  description: The steel butt.
+  id: PlushieGaston
+  name: Gaston plushie
+  description: The red synthy.
+  id: PlushieKiru
+  name: Kiru plushie
+  description: The buggy synth.
+  id: PlushieLewis
+  name: Lewis plushie
+  description: the cute lamia synth.
+  id: PlushieRB
+  name: RB plushie
+  description: Galatic synth!
+  id: PlushieKoby
+  name: Koby plushie
+  description: The cute synth.
+  id: PlushieProtogen
+  name: Plushie protogen
+  description: vulp's cyborg, very soft!
+  id: ArkinPlushie
+  name: Arkin plushie
+  description: the...
+  id: Cybrexplushie
+  name: Cybrex!
+  description: vulp's cyborg, very soft!
+  id: Narsplushie
+  name: Nars
+  description: very rought.
+  id: TestsubjectPlushie
+  name: Test subject
+  description: the choosen.
+  id: StormPlushie
+  name: Storm
+  description: the pilot.
+  id: LapinPlushie
+  name: Lapin plushie
+  description: cute protobean.
+  id: SomnaPlushie
+  name: Somna plushie
+  description: WOOOOMAAAAN.
+  id: RiptidePlushie
+  name: Riptide
+  description: Sharkie protogen!
+  id: RengiePlushie
+  name: Rengie plushie
+  description: Kinky.
+  id: Plushiecrazydragon
+  name: Crazy Dragon Plushie
+  description: Maybe a litle crazy, but anyway a cute fluffy dragon in your pocket.
+  id: PlushieHishigama
+  name: Hishigama plushie
+  description: A fluffy sergal!
+  id: PlushieSeven
+  name: Seven plushie
+  description: A fluffy sergal!
