@@ -41,11 +41,12 @@ namespace Content.Client.Info
 
         private void PopulateTutorial(Info tutorialList)
         {
-            AddSection(tutorialList, Loc.GetString("ui-info-header-intro"), "Intro.txt");
+            //AddSection(tutorialList, Loc.GetString("ui-info-header-intro"), "Intro.txt");
+            AddSection(tutorialList, Loc.GetString("ui-info-header-intro"), Loc.GetString("ui-info-description-intro"));
             var infoControlSection = new InfoControlsSection();
             tutorialList.InfoContainer.AddChild(infoControlSection);
-            AddSection(tutorialList, Loc.GetString("ui-info-header-gameplay"), "Gameplay.txt", true);
-            AddSection(tutorialList, Loc.GetString("ui-info-header-sandbox"), "Sandbox.txt", true);
+            //AddSection(tutorialList, Loc.GetString("ui-info-header-gameplay"), "Gameplay.txt", true);
+            //AddSection(tutorialList, Loc.GetString("ui-info-header-sandbox"), "Sandbox.txt", true);
 
             infoControlSection.ControlsButton.OnPressed += _ => UserInterfaceManager.GetUIController<OptionsUIController>().OpenWindow();
         }
@@ -55,14 +56,15 @@ namespace Content.Client.Info
             info.InfoContainer.AddChild(control);
         }
 
-        private void AddSection(Info info, string title, string path, bool markup = false)
+        private void AddSection(Info info, string title, string text, bool markup = false)
         {
-            AddSection(info, MakeSection(title, path, markup, _resourceManager));
+            AddSection(info, MakeSection(title, text, markup, _resourceManager));
         }
 
-        private static Control MakeSection(string title, string path, bool markup, IResourceManager res)
+        private static Control MakeSection(string title, string text, bool markup, IResourceManager res)
         {
-            return new InfoSection(title, res.ContentFileReadAllText($"/ServerInfo/{path}"), markup);
+            //return new InfoSection(title, res.ContentFileReadAllText($"/ServerInfo/{path}"), markup);
+            return new InfoSection(title, text, markup);
         }
 
     }
