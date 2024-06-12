@@ -1,0 +1,164 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "sprites by HOBOSTAR",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "plushie_S7-62"
+    },
+    {
+      "name": "lights_S7-62"
+    },
+    {
+      "name": "plushie_Dirdomoy"
+    },
+    {
+      "name": "lights_Dirdomoy"
+    },
+    {
+      "name": "holowings_Dirdomoy"
+    },
+    {
+      "name": "wingskeeper_Dirdomoy"
+    },
+    {
+      "name": "plushie_Hofi-Peak"
+    },
+    {
+      "name": "lights_Hofi-Peak"
+    },
+    {
+      "name": "gilded_ON1X"
+    },
+    {
+      "name": "lights_ON1X"
+    },
+    {
+      "name": "plushie_ON1X"
+    },
+    {
+      "name": "plushie_Sparc"
+    },
+    {
+      "name": "lights_Sparc"
+    },
+    {
+      "name": "plushie_Kronas"
+    },
+    {
+      "name": "lights_Kronas"
+    },
+    {
+      "name": "plushie_Damon"
+    },
+    {
+      "name": "lights_Damon"
+    },
+    {
+      "name": "plushie_Gaston"
+    },
+    {
+      "name": "lights_Gaston"
+    },
+    {
+      "name": "plushie_Kiru"
+    },
+    {
+      "name": "lights_Kiru"
+    },
+    {
+      "name": "plushie_Koby"
+    },
+    {
+      "name": "lights_Koby"
+    },
+    {
+      "name": "plushie_Lewis"
+    },
+    {
+      "name": "lights_Lewis"
+    },
+    {
+      "name": "plushie_RB"
+    },
+    {
+      "name": "lights_RB"
+    },
+    {
+      "name": "plushie_protogen"
+    },
+    {
+      "name": "lights_protogen"
+    },
+    {
+      "name": "Arkin_lights"
+    },
+    {
+      "name": "Arkin_plushie"
+    },
+    {
+      "name": "Cybrex_lights"
+    },
+    {
+      "name": "Cybrex_plushie"
+    },
+    {
+      "name": "Nars_lights"
+    },
+    {
+      "name": "Nars_plushie"
+    },
+    {
+      "name": "test_subject"
+    },
+    {
+      "name": "lights_test_subject"
+    },
+    {
+      "name": "Storm_plushie"
+    },
+    {
+      "name": "Storm_lights"
+    },
+    {
+      "name": "Lapin_plushie"
+    },
+    {
+      "name": "Lapin_lights"
+    },
+    {
+      "name": "Rengie_plushie"
+    },
+    {
+      "name": "Rengie_lights"
+    },
+    {
+      "name": "Somna_plushie"
+    },
+    {
+      "name": "Somna_lights"
+    },
+    {
+      "name": "Riptide_plushie"
+    },
+    {
+      "name": "Riptide_lights"
+    },
+    {
+      "name": "plushie_Seven"
+    },
+    {
+      "name": "plushie_Hishigama"
+    },
+    {
+      "name": "plushie_Crazydragon"
+    },
+    {
+      "name": "horns_Crazydragon"
+    }
+  ]
+}

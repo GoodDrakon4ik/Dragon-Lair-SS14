@@ -1,0 +1,422 @@
+- type: entity
+  parent: BasePlushie
+  id: BaseDragonPlushie
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Dragon_lair/Objects/Fun/toys.rsi
+
+- type: entity
+  parent: BaseDragonPlushie
+  id: RoboPlushie
+  components:
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Dragon_lair/Items/Toys/synth_beep.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Dragon_lair/Items/Toys/synth_beep_fall.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Dragon_lair/Items/Toys/synth_beep.ogg
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/Dragon_lair/Items/Toys/synth_beep.ogg
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/Dragon_lair/Items/Toys/synth_beep_fall.ogg
+  - type: Food
+    requiresSpecialDigestion: true
+    useSound:
+      path: /Audio/Dragon_lair/Items/Toys/synth_beep_fall.ogg
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    soundHit:
+      path: /Audio/Dragon_lair/Items/Toys/synth_beep_fall.ogg
+
+- type: entity
+  parent: RoboPlushie
+  id: PlushieS7-62
+  name: S7-62 Plushie
+  description: A cute robo-lizard plushie, It seems to glow with a slightly orange color.
+  components:
+  - type: Sprite
+    layers:
+      - state: plushie_S7-62
+      - state: lights_S7-62
+        shader: unshaded
+  - type: PointLight
+    radius: 1.1
+    energy: 1.1
+    color: "#FF7F00"
+
+- type: entity
+  parent: RoboPlushie
+  id: PlushieHofi-Peak
+  name: Hofi-Peak plushie
+  description: He is laboratory employee number 08.
+  components:
+  - type: Sprite
+    layers:
+      - state: plushie_Hofi-Peak
+      - state: lights_Hofi-Peak
+        shader: unshaded
+  - type: PointLight
+    radius: 1.1
+    energy: 1.1
+    color: "#4ABEC7"
+
+- type: entity
+  parent: RoboPlushie
+  id: PlushieDirdomoy
+  name: Dirdomoy plushie
+  description: Winged synth.
+  components:
+  - type: Sprite
+    layers:
+      - state: plushie_Dirdomoy
+      - state: wingskeeper_Dirdomoy
+      - state: holowings_Dirdomoy
+        shader: unshaded
+      - state: lights_Dirdomoy
+        shader: unshaded
+  - type: PointLight
+    radius: 1.2
+    energy: 1.45
+    color: "#3CB4D8"
+
+- type: entity
+  parent: RoboPlushie
+  id: PlushieON1X
+  name: ON1X plushie
+  description: its his gilded with real gold?!
+  components:
+  - type: Sprite
+    layers:
+      - state: plushie_ON1X
+      - state: lights_ON1X
+        shader: unshaded
+      - state: gilded_ON1X
+        shader: unshaded
+  - type: PointLight
+    radius: 1.2
+    energy: 1.3
+    color: "#539CD6"
+
+- type: entity
+  parent: RoboPlushie
+  id: PlushieSparc
+  name: Sparc plushie
+  description: cute synth.
+  components:
+  - type: Sprite
+    layers:
+      - state: plushie_Sparc
+      - state: lights_Sparc
+        shader: unshaded
+  - type: PointLight
+    radius: 1.1
+    energy: 1.1
+    color: "#AD3454"
+
+- type: entity
+  parent: RoboPlushie
+  id: PlushieKronas
+  name: Kronas plushie
+  description: The robotic synth.
+  components:
+  - type: Sprite
+    layers:
+      - state: plushie_Kronas
+      - state: lights_Kronas
+        shader: unshaded
+  - type: PointLight
+    radius: 1.1
+    energy: 1.1
+    color: "#D5F18B"
+
+- type: entity
+  parent: RoboPlushie
+  id: PlushieDamon
+  name: Damon plushie
+  description: The steel butt.
+  components:
+  - type: Sprite
+    layers:
+      - state: plushie_Damon
+      - state: lights_Damon
+        shader: unshaded
+  - type: PointLight
+    radius: 1.1
+    energy: 1.1
+    color: "#D6FCFC"
+
+- type: entity
+  parent: RoboPlushie
+  id: PlushieGaston
+  name: Gaston plushie
+  description: The red synthy.
+  components:
+  - type: Sprite
+    layers:
+      - state: plushie_Gaston
+      - state: lights_Gaston
+        shader: unshaded
+  - type: PointLight
+    radius: 1.1
+    energy: 1.1
+    color: "#FB1717"
+
+- type: entity
+  parent: RoboPlushie
+  id: PlushieKiru
+  name: Kiru plushie
+  description: The buggy synth.
+  components:
+  - type: Sprite
+    layers:
+      - state: plushie_Kiru
+      - state: lights_Kiru
+        shader: unshaded
+  - type: PointLight
+    radius: 1.1
+    energy: 1.1
+    color: "#F4AB41"
+
+- type: entity
+  parent: RoboPlushie
+  id: PlushieLewis
+  name: Lewis plushie
+  description: the cute lamia synth.
+  components:
+  - type: Sprite
+    layers:
+      - state: plushie_Lewis
+      - state: lights_Lewis
+        shader: unshaded
+  - type: PointLight
+    radius: 1.1
+    energy: 1.1
+    color: "#C300F4"
+
+- type: entity
+  parent: RoboPlushie
+  id: PlushieRB
+  name: RB plushie
+  description: Galatic synth!
+  components:
+  - type: Sprite
+    layers:
+      - state: plushie_RB
+      - state: lights_RB
+        shader: unshaded
+  - type: PointLight
+    radius: 1.1
+    energy: 1.1
+    color: "#0BE3FF"
+
+- type: entity
+  parent: RoboPlushie
+  id: PlushieKoby
+  name: Koby plushie
+  description: The cute synth.
+  components:
+  - type: Sprite
+    layers:
+      - state: plushie_Koby
+      - state: lights_Koby
+        shader: unshaded
+  - type: PointLight
+    radius: 1.1
+    energy: 1.1
+    color: "#40A5F2"
+
+- type: entity
+  parent: RoboPlushie
+  id: PlushieProtogen
+  name: Plushie protogen
+  description: vulp's cyborg, very soft!
+  components:
+  - type: Sprite
+    layers:
+      - state: plushie_protogen
+      - state: lights_protogen
+        shader: unshaded
+  - type: PointLight
+    radius: 1.1
+    energy: 1.1
+    color: "#42aaff"
+
+- type: entity
+  parent: RoboPlushie
+  id: ArkinPlushie
+  name: Arkin plushie
+  description: the...
+  components:
+  - type: Sprite
+    layers:
+      - state: Arkin_plushie
+      - state: Arkin_lights
+        shader: unshaded
+  - type: PointLight
+    radius: 1.1
+    energy: 1.1
+    color: "#008000"
+
+- type: entity
+  parent: RoboPlushie
+  id: Cybrexplushie
+  name: Cybrex!
+  description: vulp's cyborg, very soft!
+  components:
+  - type: Sprite
+    layers:
+      - state: Cybrex_plushie
+      - state: Cybrex_lights
+        shader: unshaded
+  - type: PointLight
+    radius: 1.1
+    energy: 1.1
+    color: "#00bfff"
+
+- type: entity
+  parent: RoboPlushie
+  id: Narsplushie
+  name: Nars
+  description: very rought.
+  components:
+  - type: Sprite
+    layers:
+      - state: Nars_plushie
+      - state: Nars_lights
+        shader: unshaded
+  - type: PointLight
+    radius: 1.1
+    energy: 1.1
+    color: "#00ffff"
+
+- type: entity
+  parent: RoboPlushie
+  id: TestsubjectPlushie
+  name: Test subject
+  description: the choosen.
+  components:
+  - type: Sprite
+    layers:
+      - state: test_subject
+      - state: lights_test_subject
+        shader: unshaded
+  - type: PointLight
+    radius: 1.1
+    energy: 1.1
+    color: "#ffffff"
+
+- type: entity
+  parent: RoboPlushie
+  id: StormPlushie
+  name: Storm
+  description: the pilot.
+  components:
+  - type: Sprite
+    layers:
+      - state: Storm_plushie
+      - state: Storm_lights
+        shader: unshaded
+  - type: PointLight
+    radius: 1.1
+    energy: 1.1
+    color: "#FF0000"
+
+- type: entity
+  parent: RoboPlushie
+  id: LapinPlushie
+  name: Lapin plushie
+  description: cute protobean.
+  components:
+  - type: Sprite
+    layers:
+      - state: Lapin_plushie
+      - state: Lapin_lights
+        shader: unshaded
+  - type: PointLight
+    radius: 1.1
+    energy: 1.1
+    color: "#A40000"
+
+- type: entity
+  parent: RoboPlushie
+  id: SomnaPlushie
+  name: Somna plushie
+  description: WOOOOMAAAAN.
+  components:
+  - type: Sprite
+    layers:
+      - state: Somna_plushie
+      - state: Somna_lights
+        shader: unshaded
+  - type: PointLight
+    radius: 1.1
+    energy: 1.1
+    color: "#C9424C"
+
+- type: entity
+  parent: RoboPlushie
+  id: RiptidePlushie
+  name: Riptide
+  description: Sharkie protogen!
+  components:
+  - type: Sprite
+    layers:
+      - state: Riptide_plushie
+      - state: Riptide_lights
+        shader: unshaded
+  - type: PointLight
+    radius: 1.3
+    energy: 1.2
+    color: "#F8256C"
+
+- type: entity
+  parent: RoboPlushie
+  id: RengiePlushie
+  name: Rengie plushie
+  description: Kinky.
+  components:
+  - type: Sprite
+    layers:
+      - state: Rengie_plushie
+      - state: Rengie_lights
+        shader: unshaded
+  - type: PointLight
+    radius: 1.1
+    energy: 1.1
+    color: "#FFFFFF"
+
+- type: entity
+  parent: BaseDragonPlushie
+  id: Plushiecrazydragon
+  name: Crazy Dragon Plushie
+  description: Maybe a litle crazy, but anyway a cute fluffy dragon in your pocket.
+  components:
+  - type: Sprite
+    layers:
+      - state: plushie_Crazydragon
+      - state: horns_Crazydragon
+        shader: unshaded
+
+- type: entity
+  parent: BaseDragonPlushie
+  id: PlushieHishigama
+  name: Hishigama plushie
+  description: A fluffy sergal!
+  components:
+  - type: Sprite
+    state: plushie_Hishigama
+
+- type: entity
+  parent: BaseDragonPlushie
+  id: PlushieSeven
+  name: Seven plushie
+  description: A fluffy sergal!
+  components:
+  - type: Sprite
+    state: plushie_Seven

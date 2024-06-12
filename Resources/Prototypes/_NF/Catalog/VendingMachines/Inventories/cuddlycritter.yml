@@ -56,6 +56,31 @@
   contrabandInventory:
     PlushieLamp: 3
     CrazyGlue: 1
+    PlushieS7-62: 1
+    PlushieHofi-Peak: 1
+    PlushieDirdomoy: 1
+    PlushieON1X: 1
+    PlushieSparc: 1
+    PlushieKronas: 1
+    PlushieDamon: 1
+    PlushieGaston: 1
+    PlushieKiru: 1
+    PlushieLewis: 1
+    PlushieRB: 1
+    PlushieKoby: 1
+    PlushieProtogen: 1
+    ArkinPlushie: 1
+    Cybrexplushie: 1
+    Narsplushie: 1
+    TestsubjectPlushie: 1
+    StormPlushie: 1
+    LapinPlushie: 1
+    SomnaPlushie: 1
+    RiptidePlushie: 1
+    RengiePlushie: 1
+    Plushiecrazydragon: 1
+    PlushieHishigama: 1
+    PlushieSeven: 1
   emaggedInventory:
     PlushieJester: 3
     PlushieNuke: 3
